@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     public float drawrecovery;
     public float movespeed;
 
+    public bool asd;
 
     [Header("Bar")]
     public GameObject nullhpbar;
