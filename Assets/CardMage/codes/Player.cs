@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
 
     public bool asd;
 
+
     [Header("Bar")]
     public GameObject nullhpbar;
     public GameObject hpbarobject;
