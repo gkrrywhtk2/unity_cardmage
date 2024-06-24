@@ -32,21 +32,12 @@ public class HUD : MonoBehaviour
 
     private void Awake()
     {
-        carduipanel.GetComponent<Image>();
-        nowmanatext.GetComponent<Text>();
        
     }
     // Update is called once per frame
     void Update()
     {
-        if(GameManager.instanse.player.mana < 9.9f)
-        {
-            nowmanatext.text = GameManager.instanse.player.mana.ToString("F1");
-        }
-        else
-        {
-            nowmanatext.text = GameManager.instanse.player.mana.ToString("F0");
-        }
+        
         
     }
     public void CardUiSet(int cardid)

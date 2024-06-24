@@ -33,6 +33,7 @@ public class PoolManager : MonoBehaviour
                 break;
             }
         }
+        
 
         //못찾았으면?
         if (select == null)
