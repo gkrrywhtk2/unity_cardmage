@@ -13,7 +13,7 @@ namespace SimpleCardDrawAndSpread_HandCard
         //CardDrawSystem script recall settings.
        
         CardDrawSystem _CardDrawSystem;
-        public Player player;
+       
         [Header("Card ID")]
         public int cardId;
         public int firstCardCost;
@@ -40,6 +40,7 @@ namespace SimpleCardDrawAndSpread_HandCard
         [Header("Card Draw Move")]
         public bool FirstDrawTrigger;
         public bool HandSpreadTrigger;
+        public GameObject player;
 
         // Start is called before the first frame update
         void Awake()
@@ -47,7 +48,7 @@ namespace SimpleCardDrawAndSpread_HandCard
             //CardDrawSystem script recall settings.
            
             _CardDrawSystem = FindObjectOfType<CardDrawSystem>();
-            player = FindObjectOfType<Player>();
+          
             cardtext = GetComponentInChildren<TMP_Text>();
             
 
@@ -64,7 +65,6 @@ namespace SimpleCardDrawAndSpread_HandCard
             cardId = data.cardid;
             firstCardCost = data.cardcost;
             CardCostImage.sprite = CardCosts[firstCardCost];
-            nowcost = firstCardCost;
             nowcardlevel = cardlevel;
 
             switch (nowcardlevel)
@@ -215,13 +215,13 @@ namespace SimpleCardDrawAndSpread_HandCard
             if (CardUseLock == false)
             {
              
-                if (Vector2.Distance(this.transform.position, _CardDrawSystem.CardUseGround.position) < _CardDrawSystem.CardUseDistance && GameManager.instanse.player.mana > nowcost)
+                if (Vector2.Distance(this.transform.position, _CardDrawSystem.CardUseGround.position) < _CardDrawSystem.CardUseDistance )
                 {
                     //Remove the used cards from the list and re-align them with the layers of the cards in your hand.
                     _CardDrawSystem.PlayerHandCardList.RemoveAt(HandCardNumber);
                     _CardDrawSystem.CardLayerCheckManager();
                     _CardDrawSystem.CardSpreadSettingManager();
-                    GameManager.instanse.player.CardUnderstand(cardId,nowcost,nowcardlevel);
+                    // GameManager.instanse.player.CardUnderstand(cardId,nowcost,nowcardlevel);
                     GameManager.instanse.hud.CardUiReSet();
 
 
@@ -238,10 +238,7 @@ namespace SimpleCardDrawAndSpread_HandCard
                 {
                     //Return to original position.
                     HandSpreadTrigger = true;
-                    if(GameManager.instanse.player.mana < nowcost)
-                    {
-                        Debug.Log("마나가부족합니다");
-                    }
+                  
 
                 }
                 GameManager.instanse.uicard.gameObject.SetActive(false);

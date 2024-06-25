@@ -58,30 +58,14 @@ public class Player_main : MonoBehaviour
     {
         islive = true;
         health = maxhealth;
-
         drawpoint = 0;
-
         drawrecovery = 0.5f;
-        //hpbarInit
-        nullhpbar = Instantiate(hpbarobject, hpcanvas.transform);
-        hpbarslider = nullhpbar.GetComponentInChildren<Slider>();
-        hpbarrect = nullhpbar.GetComponent<RectTransform>();
-
-        //drawbraInit
-        nulldrawbar = Instantiate(drawbarobject, hpcanvas.transform);
-        drawbarslider = nulldrawbar.GetComponentInChildren<Slider>();
-        drawbarrect = nulldrawbar.GetComponent<RectTransform>();
-
         StartCoroutine(AutoAttack());
     }
 
     private void FixedUpdate()
     {
-        HpBarUpdate();
-
-        DrawBarUpdate();
-
-
+   
         if (drawpoint <= 10)
         {
             drawpoint += drawrecovery * Time.deltaTime;

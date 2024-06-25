@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public static GameManager instanse;
-    public Player player;
+    public Player_main player;
     public PoolManager pool;
     public StageManager stagemanager;
     public HUD hud;

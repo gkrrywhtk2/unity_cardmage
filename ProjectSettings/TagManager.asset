@@ -3,9 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Mob
-  - Bullet
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -13,11 +11,11 @@ TagManager:
   - 
   - Water
   - UI
-  - UIobj
-  - Enemy
   - 
   - 
-  - Cards
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -42,22 +40,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Back1
-    uniqueID: 1273257249
-    locked: 0
-  - name: New Layer 2
-    uniqueID: 4063290969
-    locked: 0
-  - name: Player&enemy
-    uniqueID: 4288214935
-    locked: 0
-  - name: SkillEffect
-    uniqueID: 571534937
-    locked: 0
-  - name: Card
-    uniqueID: 1530293075
-    locked: 0
-  - name: CardSelectUI
-    uniqueID: 2811021419
     locked: 0

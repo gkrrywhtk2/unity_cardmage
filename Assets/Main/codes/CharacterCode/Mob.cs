@@ -107,7 +107,7 @@ public class Mob : MonoBehaviour
 
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponent<Player>().Damagecalculator(Damage);
+            collision.GetComponent<Player_main>().Damagecalculator(Damage);
         }
     }
 
